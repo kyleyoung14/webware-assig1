@@ -20,7 +20,7 @@ var server = http.createServer (function (req, res) {
   //     res.end('404 not found')
   // }
   if(uri.pathname == '/'){
-    sendFile(res, 'fencing.html')
+    sendFile(res, 'public/fencing.html')
   }
   else{
     sendFile(res, '.' + uri.pathname)
