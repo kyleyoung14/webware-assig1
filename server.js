@@ -13,8 +13,6 @@ var server = http.createServer (function (req, res) {
     case '/fencing.html':
       sendFile(res, 'fencing.html')
       break
-    case '/index.html':
-      sendFiles(res, 'index.html')
     default:
       res.end('404 not found')
   }
