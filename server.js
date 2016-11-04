@@ -6,15 +6,24 @@ var http = require('http')
 var server = http.createServer (function (req, res) {
   var uri = url.parse(req.url)
 
-  switch( uri.pathname ) {
-    case '/':
-      sendFile(res, 'fencing.html')
-      break
-    case '/fencing.html':
-      sendFile(res, 'fencing.html')
-      break
-    default:
-      res.end('404 not found')
+  // switch( uri.pathname ) {
+  //   case '/':
+  //     sendFile(res, 'fencing.html')
+  //     break
+  //   case '/fencing.html':
+  //     sendFile(res, 'fencing.html')
+  //     break
+  //   case '/index.html':
+  //     sendFile(res, 'index.html')
+  //     break
+  //   default:
+  //     res.end('404 not found')
+  // }
+  if(uri.pathname == '/'){
+    sendFile(res, 'fencing.html')
+  }
+  else{
+    sendFile(res, '.' + uri.pathname)
   }
 })
 
